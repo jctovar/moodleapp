@@ -3,7 +3,7 @@
     <name>Moodle</name>
     <description>Moodle official app</description>
     <author email="mobile@moodle.com" href="http://moodle.com">Moodle Mobile team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="https://localhost:8101" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
@@ -510,4 +510,6 @@
             </array>
         </config-file>
     </platform>
+    <allow-navigation href="https://0.0.0.0:8100" sessionid="cea52099" />
+    <allow-navigation href="https://localhost:8101" sessionid="9b836a8a" />
 </widget>
