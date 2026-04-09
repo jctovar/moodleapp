@@ -760,5 +760,5 @@ Checklist antes de compilar:
 
 ---
 
-**Última actualización:** Enero 2026
+**Última actualización:** April 2026
 **Versión de Moodle App:** 5.1.0

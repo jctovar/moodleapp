@@ -326,7 +326,7 @@ Si encuentras problemas:
 **Moodle App permite crear versiones branded completamente personalizadas:**
 
 - ✅ **Sin modificar código** - Solo cambiar `moodle.config.json`
-- ✅ **Multi-idioma** - Soporta 50+ idiomas
+- ✅ **Multi-idioma** - Soporta 68 idiomas
 - ✅ **Multi-sitio** - Múltiples Moodle en una app
 - ✅ **Personalizable** - Colores, logos, menús
 - ✅ **Segura** - Conexiones HTTPS, token management
@@ -341,5 +341,5 @@ Si encuentras problemas:
 ---
 
 **Documentación de Branding - Moodle App 5.1.0**
-**Actualizado:** Enero 2026
+**Actualizado:** April 2026
 **Versión:** 2.0

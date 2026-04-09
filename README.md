@@ -200,6 +200,7 @@ The project follows a modular architecture:
 - **`src/theme/`** - Theming system, SCSS styles, and animations
 - **`src/assets/`** - Static resources, fonts, images, and language files
 - **`src/testing/`** - Jest setup and mock services
+- **`src/types/`** - TypeScript definitions for external libraries and Cordova plugins (9 `.d.ts` files)
 
 ### Important Notes
 
@@ -309,7 +310,7 @@ Ensure you have completed all steps in the [Installation](#installation) section
 
 ### Core Services
 
-The `src/core/services/` directory contains approximately 32 core services providing:
+The `src/core/services/` directory contains 32 core services providing:
 
 - Web service communication
 - Site and authentication management
@@ -322,7 +323,7 @@ The `src/core/services/` directory contains approximately 32 core services provi
 
 ### Reusable Components
 
-The `src/core/components/` directory provides 46+ reusable components including:
+The `src/core/components/` directory provides 45 reusable components including:
 
 - Navigation components (navbar, tabs, split-view)
 - File handling components
@@ -332,12 +333,12 @@ The `src/core/components/` directory provides 46+ reusable components including:
 
 ### Addons and Features
 
-The `src/addons/` directory contains approximately 169 optional feature modules:
+The `src/addons/` directory contains 69 optional feature modules organized into four groups:
 
-- **Activity modules** - 25 different activity types (assign, quiz, forum, chat, lesson, scorm, wiki, etc.)
-- **Question types** - Question rendering for various formats
-- **Question behaviors** - Question interaction logic
-- **Other addons** - Messages, calendar, badges, competency, blog, and more
+- **Activity modules** (`mod/`) - 25 activity types (assign, quiz, forum, chat, lesson, scorm, wiki, book, glossary, data, workshop, and more)
+- **Question types** (`qtype/`) - 17 question renderers for formats such as essay, multichoice, shortanswer, truefalse, numerical, and match
+- **Question behaviors** (`qbehaviour/`) - 10 question interaction behavior implementations
+- **Other addons** - 17 standalone addons: messages, calendar, badges, competency, blog, notes, notifications, private files, reports, and more
 
 ## Resources
 

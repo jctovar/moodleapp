@@ -786,5 +786,5 @@ npm start
 
 ---
 
-**Documento creado:** Enero 2026
+**Documento creado:** April 2026
 **Versión:** 1.0

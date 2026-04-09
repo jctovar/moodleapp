@@ -503,4 +503,4 @@ Agrega más opciones según necesites.
 ---
 
 **Referencia Rápida - Moodle App 5.1.0**
-**Actualizado:** Enero 2026
+**Actualizado:** April 2026

@@ -1,6 +1,6 @@
 # Guía Completa de Personalización de Moodle App (Branding)
 
-**Última actualización:** Enero 2026
+**Última actualización:** April 2026
 **Versión de Moodle App:** 5.1.0
 **Configuración:** `moodle.config.json` + `src/types/config.d.ts`
 
@@ -787,6 +787,7 @@ protected async getCustomItemsFromConfig(): Promise<CoreMainMenuCustomItem[]> {
 
 #### `enableanalytics` (Habilitar Analíticas)
 **Tipo:** `boolean`
+**Nota:** Esta clave existe en `moodle.config.json` por compatibilidad histórica pero no está definida en la interfaz `EnvironmentConfig` de `src/types/config.d.ts`. No tiene efecto directo desde la configuración; el control de analíticas se gestiona a nivel de usuario en la configuración de la app.
 
 **Ejemplo:**
 ```json
@@ -796,9 +797,8 @@ protected async getCustomItemsFromConfig(): Promise<CoreMainMenuCustomItem[]> {
 ```
 
 **Impacto:**
-- Recopila datos de uso anónimos
-- Ayuda a Moodle a mejorar la app
-- Respetar privacidad de usuarios
+- Clave legada presente en el archivo de configuración por defecto
+- Para control real de analíticas, el usuario gestiona la preferencia desde Configuración → General
 
 ---
 
@@ -1221,6 +1221,6 @@ node -e "require('./moodle.config.json')"
 
 ---
 
-**Documento creado:** Enero 2026
+**Documento creado:** April 2026
 **Versión de Moodle App:** 5.1.0
 **Autor:** Claude Code Analysis

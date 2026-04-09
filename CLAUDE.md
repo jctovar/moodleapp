@@ -72,7 +72,7 @@ src/
 The largest part of the codebase. Provides fundamental functionality used by all features:
 
 **Key Subdirectories**:
-- **`services/`** (~32 services) - Core business logic
+- **`services/`** (32 services) - Core business logic
   - Web service communication (`ws.ts`)
   - Site/authentication management (`sites.ts`)
   - File system operations (`file.ts`, `filepool.ts`)
@@ -82,14 +82,14 @@ The largest part of the codebase. Provides fundamental functionality used by all
   - Caching, sync, network detection, QR scanning, analytics
   - Each service provides delegation points via handlers
 
-- **`components/`** (~46 reusable components) - Common UI building blocks
+- **`components/`** (45 reusable components) - Common UI building blocks
   - Navigation (navbar, tabs, split-view)
   - File handling (attachments, file display)
   - Forms (inputs, password modals, selectors)
   - Content display (loading states, empty states, charts, avatars)
   - File operations (upload, download, refresh)
 
-- **`features/`** (~35 major features) - Core functionality modules
+- **`features/`** (35 major features) - Core functionality modules
   - `login/` - Authentication, SSO, session management
   - `mainmenu/` - App navigation structure
   - `courses/` - Course browsing
@@ -125,13 +125,13 @@ The largest part of the codebase. Provides fundamental functionality used by all
 
 ### Addons (`src/addons`)
 
-Optional feature modules (~169 addons) extending core functionality. Organized by Moodle features:
+Optional feature modules (69 addons total) extending core functionality. Organized by Moodle features:
 
 **Structure**:
 - **Activity modules** (`mod/`) - 25 activity types (assign, quiz, forum, chat, lesson, scorm, wiki, book, glossary, data, workshop, etc.)
-- **Question types** (`qtype/`) - Question rendering for different formats (essay, multichoice, shortanswer, truefalse, numerical, match, etc.)
-- **Question behaviors** (`qbehaviour/`) - Question interaction logic
-- **Other addons** - Messages, calendar, badges, competency, blog, notes, notifications, private files, reports, etc.
+- **Question types** (`qtype/`) - 17 question renderers (essay, multichoice, shortanswer, truefalse, numerical, match, etc.)
+- **Question behaviors** (`qbehaviour/`) - 10 question interaction logic implementations
+- **Other addons** - 17 standalone addons: messages, calendar, badges, competency, blog, notes, notifications, private files, reports, etc.
 
 **Typical Addon Structure**:
 ```
@@ -225,7 +225,7 @@ The app includes Behat integration for end-to-end testing:
 - Clear separation of concerns
 
 ### Reusable Components
-The core provides 46+ reusable components for common UI patterns. Check `src/core/components/` before building custom solutions.
+The core provides 45 reusable components for common UI patterns. Check `src/core/components/` before building custom solutions.
 
 ### Handlers and Delegates
 Use the delegation pattern for extensibility:
@@ -241,13 +241,18 @@ constructor(private service: CoreService) { }
 ```
 
 ### Path Aliases
-TypeScript paths are configured for clean imports:
-- `@/` → `src/`
-- `@addons/` → `src/addons/`
-- `@classes/` → `src/core/classes/`
-- `@components/` → `src/core/components/`
-- `@services/` → `src/core/services/`
-- etc. (see `tsconfig.json`)
+TypeScript paths are configured in `tsconfig.json` for clean imports:
+- `@/*` → `src/*`
+- `@addons/*` → `src/addons/*`
+- `@classes/*` → `src/core/classes/*`
+- `@components/*` → `src/core/components/*`
+- `@directives/*` → `src/core/directives/*`
+- `@features/*` → `src/core/features/*`
+- `@guards/*` → `src/core/guards/*`
+- `@pipes/*` → `src/core/pipes/*`
+- `@services/*` → `src/core/services/*`
+- `@singletons` → `src/core/singletons/index`
+- `@singletons/*` → `src/core/singletons/*`
 
 ## File Organization
 
@@ -268,13 +273,30 @@ Place files near their usage:
 ## Configuration
 
 ### Environment Configuration
-Environment-specific settings via `moodle.config.json`:
+Environment-specific settings via `moodle.config.json` (37 configurable keys). Key groups:
+
+**App Identity**: `app_id`, `appname`, `versioncode`, `versionname`, `customurlscheme`, `wsservice`
+
+**Cache Frequencies**: `cache_update_frequency_usually`, `cache_update_frequency_often`, `cache_update_frequency_sometimes`, `cache_update_frequency_rarely`
+
+**Language**: `default_lang`, `forcedefaultlanguage`, `languages` (68 languages supported)
+
+**Sites**: `sites`, `demo_sites`, `multisitesdisplay`, `sitefindersettings`, `onlyallowlistedsites`
+
+**UI/Visual**: `defaultZoomLevel`, `zoomlevels`, `forceColorScheme`, `forceLoginLogo`, `showTopLogo`, `notificoncolor`, `iconsPrefixes`, `collapsibleItemsExpanded`
+
+**Features**: `enableanalytics`, `enableonboarding`, `clearIABSessionWhenAutoLogin`
+
+**Network**: `wsrequestqueuelimit`, `wsrequestqueuedelay`, `ioswebviewscheme`
+
+**Other**: `privacypolicy`, `appstores`, `calendarreminderdefaultvalue`, `toastDurations`, `disableTokenFile`
+
 ```json
 {
   "app_id": "com.moodle.moodlemobile",
-  "app_name": "Moodle",
-  "filemanager": "moodle",
-  "wsservice": "moodle_mobile_app"
+  "appname": "Moodle Mobile",
+  "wsservice": "moodle_mobile_app",
+  "default_lang": "en"
 }
 ```
 
